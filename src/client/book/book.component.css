@@ -1,0 +1,34 @@
+.form-control {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 2px;
+}
+
+table, th, td {
+    border: 1px solid black;
+ }
+
+ table {
+     border: 1px solid black;
+ }
+
+ table tr {
+     border: 1px solid black;
+ }
+
+ .filter-selector {
+     position: absolute;
+     left: 25%;
+     top: 15%;
+ }
+ .searchInput {
+    position: absolute;
+    left: 25%;
+}
+
+.sort-container {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+}

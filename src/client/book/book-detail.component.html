@@ -1,0 +1,30 @@
+<br>
+
+<div *ngIf="book">
+  <img src="{{book.image}}">
+    <h2>{{book.title}} </h2>
+    <div>
+      <label>Author: </label>
+      {{book.author}}
+    </div>
+
+    <div>
+      <label>Category: </label>
+      {{book.category}}     
+    </div>
+    <div>
+      <label>Avalaible: </label>
+      {{book.cantity}}     
+    </div>
+    <div>
+      <label>Date: </label>
+      {{book.date | date: 'dd/MM/yyyy'}}     
+    </div>
+    <br>
+    <div>
+      <button (click)="goBack()">
+        Back to Menu 
+      </button>
+    </div>
+
+</div>

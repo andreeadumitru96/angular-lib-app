@@ -1,0 +1,47 @@
+<br><br><br>
+ <div class="sort-container">
+     <label> Find a book: </label>
+    <input type="text" [(ngModel)]="search" name="search"/>
+   </div> 
+ <div class="fil">
+    <div> 
+        <select class="form-control filter-selector" 
+            [value]="sort" 
+            (input)="sort = $event.target.value">
+            <option value="1">Sort A-Z</option>
+            <option value="2">Sort Z-A</option>
+            <option value="3">No filter</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Author</td>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books | searchingFilter: search | sortingFilter: sort" [class.selected]="book === selectedBook" (click)="onSelect(book)"[routerLink]="['/book', book._id]">
+                    <td> {{book.title}} </td>
+                    <td>{{book.author}}</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <br>
+    Title: <input mdInput placeholder="title" [(ngModel)]="bookTitle" name="bookTitle"/><br>
+    Author: <input type="text" [(ngModel)]="bookAuthor" /><br>
+    Category: <input type="text" [(ngModel)]="bookCategory" /><br>
+    
+    <button (click)="createBook(bookTitle, bookAuthor, bookCategory)">Add a book</button> 
+    
+</div>
+
+
+
+
+
+
+     
+
+    
